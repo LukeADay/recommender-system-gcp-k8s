@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: retailrocket_data
+    tables:
+      - name: events
+
+models:
+  - name: cleaned_events
+    description: "Filtered and cleaned events data with key event types"
+

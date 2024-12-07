@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommender-training
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recommender-training
+  template:
+    metadata:
+      labels:
+        app: recommender-training
+    spec:
+      containers:
+      - name: recommender-training
+        image: gcr.io/recommender-system-gcp-k8s/recommender-training:latest
+        env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: "/root/.config/gcloud/application_default_credentials.json"
+        - name: GOOGLE_CLOUD_PROJECT
+          value: "recommender-system-gcp-k8s"
+        volumeMounts:
+        - name: gcp-credentials
+          mountPath: /root/.config/gcloud
+      volumes:
+      - name: gcp-credentials
+        secret:
+          secretName: gcp-credentials

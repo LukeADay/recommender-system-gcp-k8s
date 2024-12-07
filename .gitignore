@@ -36,3 +36,11 @@ application_default_credentials.json
 *.bak
 *.tmp
 
+# DBT-specific files and directories
+dbt_project/analyses/
+dbt_project/macros/
+dbt_project/seeds/
+dbt_project/snapshots/
+
+# Data files
+train.csv
