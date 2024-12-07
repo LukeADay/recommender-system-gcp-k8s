@@ -1,3 +1,38 @@
 # Ignore the Data folder
 Data/
 .DS_Store
+venv/
+
+# DBT-specific files
+dbt_project/target/
+dbt_project/logs/
+
+# Ignore logs
+logs/
+
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Docker-specific files
+docker-compose.override.yml
+
+# Ignore sensitive credentials
+profiles.yml
+*.json
+application_default_credentials.json
+
+# Ignore IDE-specific files (optional but useful)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore other temp or cache files
+*.log
+*.bak
+*.tmp
+
